@@ -54,5 +54,6 @@ jobs:
         run: sh autogen.sh
       - name: autogen 
         run: ./configure --with-incompatible-bdb
+        
       - name: make
         run: make -j4
