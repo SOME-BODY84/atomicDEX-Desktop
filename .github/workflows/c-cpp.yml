@@ -28,7 +28,7 @@ jobs:
         run: git clone https://github.com/KomodoPlatform/libwally-core.git && cd libwally-core && ./tools/autogen.sh&&./configure --disable-shared && sudo make -j2 install  
 
       - name: Install base dependencies5
-        run: cd libwally-core 
+        run: cd libwally-core ./tools/autogen.sh ./configure --disable-shared sudo make -j2 install  
         
       - name: Install base dependencies6   
         run: sudo apt-get install libboost-all-dev libdb-dev libdb++-dev libminiupnpc-dev libqrencode-dev
