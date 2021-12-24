@@ -13,30 +13,8 @@ jobs:
         run: sudo apt-get update
         
       - name: Install Deps 
-        run: sudo apt-get install build-essential \
-                    libgl1-mesa-dev \
-                    ninja-build \
-                    curl \
-                    wget \
-                    zstd \
-                    software-properties-common \
-                    lsb-release \
-                    libpulse-dev \
-                    libtool \
-                    autoconf \
-                    unzip \
-                    libssl-dev \
-                    libxkbcommon-x11-0 \
-                    libxcb-icccm4 \
-                    libxcb-image0 \
-                    libxcb1-dev \
-                    libxcb-keysyms1-dev \
-                    libxcb-render-util0-dev \
-                    libxcb-xinerama0 \
-                    libgstreamer-plugins-base1.0-dev \
-                    python3-setuptools \
-                    git -y    
-
+        run: sudo apt-get install build-essential && libgl1-mesa-dev && ninja-build && curl && wget && zstd 
+                   
       - name: Install base dependencies
         run:   pip3 install aqtinstall
 
@@ -45,7 +23,7 @@ jobs:
         
 
       - name: Install base dependencies
-        run: git clone https://github.com/KomodoPlatform/libwally-core.git&&cd libwally-core&&./tools/autogen.sh&&./configure --disable-shared&&sudo make -j2 install  
+        run: git clone https://github.com/KomodoPlatform/libwally-core.git && cd libwally-core && ./tools/autogen.sh&&./configure --disable-shared && sudo make -j2 install  
 
       - name: Install base dependencies
         run: cd libwally-core 
