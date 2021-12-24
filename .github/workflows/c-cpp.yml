@@ -13,7 +13,7 @@ jobs:
         run: sudo apt-get update
         
       - name: Install Deps 
-        run: sudo apt-get install build-essential && libgl1-mesa-dev && ninja-build && curl && wget && zstd &&  software-properties-common &&
+        run: sudo apt-get install build-essential && ninja-build && curl && wget && zstd &&  software-properties-common &&
                     lsb-release &&
                     libpulse-dev &&
                     libtool &&
