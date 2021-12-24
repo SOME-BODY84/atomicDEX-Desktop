@@ -3,7 +3,13 @@ name: AtomicDex-Desktop CD releases
 on:
   push:
     branches:
-    - temporary_disabled
+      - '*'
+  pull_request:
+    branches:
+      - dev
+  delete:
+   branches:
+     - '*'
 
 env:
   DEX_PROJECT_NAME: "atomicdex-desktop"
