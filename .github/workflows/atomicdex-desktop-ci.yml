@@ -1,5 +1,4 @@
 name: AtomicDex-Desktop CI
-
 on:
   push:
     branches:
@@ -8,8 +7,8 @@ on:
     branches:
       - dev
   delete:
-    branches:
-- '*'
+   branches:
+     - '*'
 
 env:
   DEX_PROJECT_NAME: "atomicdex-desktop"
