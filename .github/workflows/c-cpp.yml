@@ -15,6 +15,10 @@ jobs:
                    
       - name: Install base dependencies
         run:   pip3 install aqtinstall
+     
+      - name: Install base dependencies
+        run:   export QT_INSTALL_CMAKE_PATH=/home/ubuntu/Qt/5.15.2/gcc_64/lib/cmake
+               export QT_ROOT=/home/ubuntu/Qt/5.15.2    
 
       - name: Install base dependencies
         run:   python3 -m aqt install -O $HOME/Qt 5.15.2 linux desktop -b https://qt-mirror.dannhauer.de/ -m qtcharts qtwidgets debug_info qtwebengine qtwebview
