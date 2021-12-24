@@ -1,0 +1,63 @@
+name: '[FULL] ubuntu-18.04.'
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+
+    steps:
+      - uses: actions/checkout@v1
+        
+      - name: Update apt repos
+        run: sudo apt-get update
+
+      - name: Install base dependencies
+        run:   pip3 install aqtinstall
+
+      - name: Install base dependencies
+        run:   python3 -m aqt install -O $HOME/Qt 5.15.2 linux desktop -b https://qt-mirror.dannhauer.de/ -m qtcharts qtwidgets debug_info qtwebengine qtwebview
+        
+      - name: Install Deps 
+        run: sudo apt-get install build-essential \
+                    libgl1-mesa-dev \
+                    ninja-build \
+                    curl \
+                    wget \
+                    zstd \
+                    software-properties-common \
+                    lsb-release \
+                    libpulse-dev \
+                    libtool \
+                    autoconf \
+                    unzip \
+                    libssl-dev \
+                    libxkbcommon-x11-0 \
+                    libxcb-icccm4 \
+                    libxcb-image0 \
+                    libxcb1-dev \
+                    libxcb-keysyms1-dev \
+                    libxcb-render-util0-dev \
+                    libxcb-xinerama0 \
+                    libgstreamer-plugins-base1.0-dev \
+                    git -y
+    
+  
+      - name: Install base dependencies
+        run: git clone https://github.com/KomodoPlatform/libwally-core.git&&cd libwally-core&&./tools/autogen.sh&&./configure --disable-shared&&sudo make -j2 install  
+
+      - name: Install base dependencies
+        run: cd libwally-core 
+        
+      - name: Install base dependencies2   
+        run: sudo apt-get install libboost-all-dev libdb-dev libdb++-dev libminiupnpc-dev libqrencode-dev
+        
+      - name: Install base dependencies3
+        run: sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler
+
+      - name: autogen 
+        run: sh autogen.sh
+      - name: autogen 
+        run: ./configure --with-incompatible-bdb
+      - name: make
+        run: make -j4
