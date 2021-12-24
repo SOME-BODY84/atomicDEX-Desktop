@@ -17,7 +17,7 @@ jobs:
         run:   pip3 install aqtinstall
 
       - name: Install base dependencies2
-        run:   python3 -m aqt install -O $HOME/Qt 5.15.2 linux desktop -b https://qt-mirror.dannhauer.de/ -m qtcharts qtwidgets debug_info qtwebengine qtwebview
+        run:   python3 -m aqt install -O $HOME/Qt 5.15.2 linux desktop -b https://qt-mirror.dannhauer.de/ -m qtcharts debug_info qtwebengine 
 
      
       - name: Install base dependencies3
