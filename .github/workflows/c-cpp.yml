@@ -16,24 +16,24 @@ jobs:
       - name: Install base dependencies
         run:   pip3 install aqtinstall
 
-      - name: Install base dependencies
+      - name: Install base dependencies2
         run:   python3 -m aqt install -O $HOME/Qt 5.15.2 linux desktop -b https://qt-mirror.dannhauer.de/ -m qtcharts qtwidgets debug_info qtwebengine qtwebview
 
      
-      - name: Install base dependencies
+      - name: Install base dependencies3
         run:   export QT_INSTALL_CMAKE_PATH=/home/ubuntu/Qt/5.15.2/gcc_64/lib/cmake
                export QT_ROOT=/home/ubuntu/Qt/5.15.2   
 
-      - name: Install base dependencies
+      - name: Install base dependencies4
         run: git clone https://github.com/KomodoPlatform/libwally-core.git && cd libwally-core && ./tools/autogen.sh&&./configure --disable-shared && sudo make -j2 install  
 
-      - name: Install base dependencies
+      - name: Install base dependencies5
         run: cd libwally-core 
         
-      - name: Install base dependencies2   
+      - name: Install base dependencies6   
         run: sudo apt-get install libboost-all-dev libdb-dev libdb++-dev libminiupnpc-dev libqrencode-dev
         
-      - name: Install base dependencies3
+      - name: Install base dependencies7
         run: sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler
 
       - name: autogen 
